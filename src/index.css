@@ -8,14 +8,14 @@ a{
 }
 
 p, h1, h2, h3 {
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: white;
   margin: 0;
   padding: 0;
 }
 
 .navigation{
-  background-color: #2F3B4C;
+  background-color: #292D30;
   height: 100vh;
   width: 10%;
   float: left;

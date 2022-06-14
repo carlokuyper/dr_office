@@ -11,7 +11,7 @@ const Appointments = () => {
         <>
         <Header />
         <div className="container">
-            <div className="callendar">
+            <div className="calendar">
                 
             </div>
         </div>
