@@ -35,14 +35,14 @@ const Patient = (props) => {
     axios.post('http://localhost/drOffice/readPatient.php')
       .then((response) => {
         let data = response.data;
-        let renderTable = data.map((item) => <TableItems key={item.id} name={item.name} surname={item.surname} profileImg={item.profileImg} age={item.age} gender={item.gender} email={item.email} contact={item.contact} room={item.room} specialization={item.specialization} iddoc={item.iddoc} medicalAidNumber={item.medicalAidNumber} />);
+        let renderTable = data.map((item) => <TableItems key={item.id} uniqueId={item.id} name={item.name} surname={item.surname} profileImg={item.profileImg} age={item.age} gender={item.gender} email={item.email} contact={item.contact} room={item.room} specialization={item.specialization} iddoc={item.iddoc} medicalAidNumber={item.medicalAidNumber} />);
         // console.log(renderTable)
         setTable(renderTable);
         setRenderTable(false);
       })
       .catch(err=>{
         console.log(err);
-      });
+      }); 
       
   },[renderTable]);
 

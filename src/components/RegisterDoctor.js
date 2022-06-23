@@ -15,7 +15,6 @@ const RegisterDoctor = (props) => {
         name:'',
         surname:'',
         email:'',
-        username:'',
         contact:'',
         age:'',
         gender:'',
@@ -29,7 +28,6 @@ const RegisterDoctor = (props) => {
     const [nameError, setNameError] = useState();
     const [surnameError, setSurnameError] = useState();
     const [emailError, setEmailError] = useState();
-    const [userNameError, setUserNameError] = useState();
     const [contactError, setContactError] = useState();
     const [ageError, setAgeError] = useState();
     const [genderError, setGenderError] = useState();
@@ -100,30 +98,6 @@ const RegisterDoctor = (props) => {
                 setEmailIcon();
                 setEmailAvail();
                 setEmailError();
-            }
-        });
-    }
-
-    const userNameVal = (e) => {
-        const value = e.target.value.trim();
-        setInputs({...inputs, username:value});
-        if(inputs.username !== ''){setUserNameError();}
-    }
-
-    const validateUser = () =>{
-        axios.post('http://localhost:80/drOffice/authenticateDoctor.php', inputs)
-        .then(function(response){
-            console.log(response);
-            if(response.data === "Available"){
-                setUserIcon(Okay);
-                setUserAvail();
-            } else if(response.data === "Not Available"){
-                setUserIcon(NotOkay);
-                setUserAvail(<MiniModalLeft message="Username is not a Available" />);
-            } else if(response.data === ''){
-                setUserIcon();
-                setUserAvail();
-                setUserNameError();
             }
         });
     }
@@ -207,12 +181,6 @@ const RegisterDoctor = (props) => {
             setEmailError();
         }
 
-        if(inputs.username === ''){
-            setUserNameError(<MiniModalLeft message="We need your username" />);
-        } else {
-            setUserNameError();
-        }
-
         if(inputs.contact === ''){
             setContactError(<MiniModalRight message="What is you phone nr?" />);
         } else {
@@ -289,8 +257,6 @@ const RegisterDoctor = (props) => {
                 <input className='reg-input' name="name" type="text" placeholder='First Name' onChange={nameVal} />
                 {surnameError}
                 <input className='reg-input' name='surname' type="text" placeholder='Last Name' onChange={surnameVal} />
-                {userNameError}
-                <input className='reg-input-long' name='username' type="text" placeholder='username' onChange={userNameVal} />
                 {emailError}
                 {emailAvail}  
             <input className='reg-input-long' name="email" type="email" placeholder='Your Email' onBlur={validateEmail} onChange={emailVal} />

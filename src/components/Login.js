@@ -10,13 +10,13 @@ const Login = () => {
     const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
-    username: '',
+    email: '',
     password: ''
   });
 
-  const usernameVal = (e) => {
+  const emailVal = (e) => {
     const value = e.target.value;
-    setInputs({...inputs, username: value});
+    setInputs({...inputs, email: value});
     //Here you will validate 
   }
 
@@ -35,7 +35,7 @@ const Login = () => {
           console.log(response);
 
           if(response.data === true){
-            sessionStorage.setItem('activeUser', inputs.username);
+            sessionStorage.setItem('activeUser', inputs.email);
             navigate("/Appointments")
           }else {
             console.log("not working");
@@ -52,7 +52,7 @@ const Login = () => {
             <div className="login-con">
                 <h2>Login</h2>
                 <form>
-                    <input className="login-input" name="username" type="username" placeholder="username" onChange={usernameVal} />
+                    <input className="login-input" name="email" type="email" placeholder="email" onChange={emailVal} />
                     <input className="login-input" name="password" type="password" placeholder="password" onChange={passwordeVal} />
                 </form>
                 <a><p className="forgot-btn">Forgot password</p></a>

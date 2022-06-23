@@ -26,13 +26,12 @@ const Header = () => {
       
         let userProfile = {activeUser: userSession};
     
-        axios.post('http://localhost/drOffice/readProfile.php', userProfile)
+        axios.post('http://localhost/drOffice/readReceptionist.php', userProfile)
         .then((res)=>{
           let data = res.data;
           let source = data[0].profileImg;
           let renderpath = 'http://localhost/drOffice/' + source;
           setRenderImage(renderpath);
-          
         })
         .catch(err=>{
           console.log(err);

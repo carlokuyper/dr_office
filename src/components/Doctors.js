@@ -17,7 +17,7 @@ const Doctors = (props) => {
         setModal(<RegisterDoctor upRender={props.rerender} rerender={setModal} original={props.message} id={props.uniqueId} />)
     }
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
     const [table, setTable] = useState();
     const [renderTable, setRenderTable] = useState();
    
@@ -35,7 +35,7 @@ const Doctors = (props) => {
     axios.post('http://localhost/drOffice/readDr.php')
       .then((response) => {
         let data = response.data;
-        let renderTable = data.map((item) => <TableItems key={item.id} name={item.name} surname={item.surname} profileImg={item.profileImg} age={item.age} gender={item.gender} email={item.email} contact={item.contact} room={item.room} specialization={item.specialization} />);
+        let renderTable = data.map((item) => <TableItems key={item.id} name={item.name} surname={item.surname} uniqueId={item.id} profileImg={item.profileImg} age={item.age} gender={item.gender} email={item.email} contact={item.contact} room={item.room} specialization={item.specialization} />);
         // console.log(renderTable)
         setTable(renderTable);
         setRenderTable(false);

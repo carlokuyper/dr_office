@@ -5,19 +5,21 @@
     position: absolute;
     top: 0;
     z-index: 999;
+    float: left;
 }
 
 .for{
-    width: 40%;
-    height: 80%;
+    width: 30%;
+    height: auto;
     position: relative;
-    margin:2% auto;
+    margin:3% auto;
     background-color: #2F3B4C;
     padding: 25px;
     border-radius: 5px;
     box-shadow: 10px 10px 27px 0px rgba(0,0,0,0.18);
     -webkit-box-shadow: 10px 10px 27px 0px rgba(0,0,0,0.18);
     -moz-box-shadow: 10px 10px 27px 0px rgba(0,0,0,0.18);
+    padding-bottom: 5%;
 }
 
 .reg-input{
@@ -38,6 +40,52 @@
     margin: 5% 0% 0% 0%;
     font-size: 15px;
     cursor: pointer;
+}
+
+.eddituser{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.8);
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    overflow-x: auto;
+    transform: translate(-14.5%);
+    float: left;
+}
+
+.edit-input{
+    border-radius: 10px;
+    width: 40%;
+    height: 2%;
+    padding: 2% 2% 2% 3%;
+    margin: 5% 1% 0% 0%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.edit-input-long{
+    border-radius: 10px;
+    width: 86%;
+    height: 2%;
+    padding: 2% 2% 2% 3%;
+    margin: 5% 1% 0% 0%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.editTitle-l{
+    display: inline;
+    width: 50%;
+    float: left;
+    margin-top: 5%;
+}
+
+.editTitle-r{
+    display: inline;
+    width: 50%;
+    float: right;
+    margin-top: 5%;
 }
 
 .input-con{

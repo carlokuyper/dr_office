@@ -15,7 +15,6 @@ const RegisterReceptionist = (props) => {
         name:'',
         surname:'',
         email:'',
-        username:'',
         contact:'',
         age:'',
         gender:'',
@@ -28,7 +27,6 @@ const RegisterReceptionist = (props) => {
     const [nameError, setNameError] = useState();
     const [surnameError, setSurnameError] = useState();
     const [emailError, setEmailError] = useState();
-    const [userNameError, setUserNameError] = useState();
     const [contactError, setContactError] = useState();
     const [ageError, setAgeError] = useState();
     const [genderError, setGenderError] = useState();
@@ -100,30 +98,6 @@ const RegisterReceptionist = (props) => {
         });
     }
 
-    const userNameVal = (e) => {
-        const value = e.target.value.trim();
-        setInputs({...inputs, username:value});
-        if(inputs.username !== ''){setUserNameError();}
-    }
-
-    const validateUser = () =>{
-        axios.post('http://localhost:80/drOffice/authenticateReseptionist.php', inputs)
-        .then(function(response){
-            console.log(response);
-            if(response.data === "Available"){
-                setUserIcon(Okay);
-                setUserAvail();
-            } else if(response.data === "Not Available"){
-                setUserIcon(NotOkay);
-                setUserAvail(<MiniModalLeft message="Username is not a Available" />);
-            } else if(response.data === ''){
-                setUserIcon();
-                setUserAvail();
-                setUserNameError();
-            }
-        });
-    }
-
     const contactVal = (e) => {
         const contactRegex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
         
@@ -147,7 +121,7 @@ const RegisterReceptionist = (props) => {
         if(inputs.gender !== ''){setGenderError();}
     }
 
-    const departmentrVal = (e) => {
+    const departmentVal = (e) => {
         const value = e.target.value.trim();
         setInputs({...inputs, department:value});
         if(inputs.department !== ''){setDepartmentError();}
@@ -194,12 +168,6 @@ const RegisterReceptionist = (props) => {
             setEmailError(<MiniModalLeft message="We need your email..." />);
         } else {
             setEmailError();
-        }
-
-        if(inputs.username === ''){
-            setUserNameError(<MiniModalLeft message="We need your username" />);
-        } else {
-            setUserNameError();
         }
 
         if(inputs.contact === ''){
@@ -272,8 +240,6 @@ const RegisterReceptionist = (props) => {
                 <input className='reg-input' name="name" type="text" placeholder='First Name' onChange={nameVal} />
                 {surnameError}
                 <input className='reg-input' name='surname' type="text" placeholder='Last Name' onChange={surnameVal} />
-                {userNameError}
-                <input className='reg-input-long' name='username' type="text" placeholder='username' onChange={userNameVal} />
                 {emailError}
                 {emailAvail}  
                 <input className='reg-input-long' name="email" type="email" placeholder='Your Email' onBlur={validateEmail} onChange={emailVal} />
@@ -290,7 +256,7 @@ const RegisterReceptionist = (props) => {
 
             <div className='input-con'>
                 {departmentError}
-                <input className='reg-input-long' name="department" type="department" placeholder='Department' onBlur={validateEmail} onChange={emailVal} />
+                <input className='reg-input-long' name="department" type="department" placeholder='Department' onChange={departmentVal} />
                 {passwordError}
                 <input className='reg-input' name="password" type="password" placeholder='Choose A Password' onChange={passwordVal} />
                 {passwordConError}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import axios from 'axios';
 
-const EditPost = (props) => {
+const EditReceptionist = (props) => {
 
   const [updDr, setUpdDr] = useState({
     nameUpdate: props.updateName,
@@ -78,7 +78,7 @@ const EditPost = (props) => {
   return (
     <div className='eddituser'>
       <form className='for'>
-        <h3>Edit Doctors</h3>
+        <h3>Edit Receptionist</h3>
         <div className='input-con'>
           <p className='editTitle-l'>Name</p>
           <p className='editTitle-r'>Surname</p>
@@ -102,4 +102,4 @@ const EditPost = (props) => {
   )
 }
 
-export default EditPost
+export default EditReceptionist

@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import axios from 'axios';
 
-const EditPost = (props) => {
+const EditPatient = (props) => {
 
   const [updDr, setUpdDr] = useState({
     nameUpdate: props.updateName,
     surnameUpdate: props.updateSurname,
-    specializationUpdate: props.updateSpecialization,
-    roomUpdate: props.updateRoom,
+    medicalAidNumberUpdate: props.updateMedicalAidNumber,
+    iddocUpdate: props.updateIddoc,
     emailUpdate: props.updateEmail,
     contactUpdate: props.updateContact,
     id:props.id
@@ -21,8 +21,8 @@ const EditPost = (props) => {
   useEffect(()=>{
     document.getElementById('updName').innerHTML = props.updateName;
     document.getElementById('updSurname').innerHTML = props.updateSurname;
-    document.getElementById('updSpecialization').innerHTML = props.updateSpecialization;
-    document.getElementById('updRoom').innerHTML = props.updateRoom;
+    document.getElementById('updMedicalAidNumber').innerHTML = props.updateMedicalAidNumber;
+    document.getElementById('updIddoc').innerHTML = props.updateIddoc;
     document.getElementById('updEmail').innerHTML = props.updateEmail;
     document.getElementById('updContact').innerHTML = props.updateContact;
   },[]);
@@ -39,15 +39,15 @@ const EditPost = (props) => {
     console.log(updDr);
   }
 
-  const specializationChange = (e) => {
+  const medicalAidNumberChange = (e) => {
     let value = e.target.value;
-    setUpdDr({...updDr, specializationUpdate: value});
+    setUpdDr({...updDr, medicalAidNumberUpdate: value});
     console.log(updDr);
   }
 
-  const roomChange = (e) => {
+  const iddocChange = (e) => {
     let value = e.target.value;
-    setUpdDr({...updDr, roomUpdate: value});
+    setUpdDr({...updDr, iddocUpdate: value});
     console.log(updDr);
   }
 
@@ -66,7 +66,7 @@ const EditPost = (props) => {
   const udpatePost = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:80/drOffice/updateDr.php', updDr)
+    axios.post('http://localhost:80/drOffice/updatePat.php', updDr)
       .then((res)=>{
         let data = res.data;
         console.log(data); 
@@ -78,7 +78,7 @@ const EditPost = (props) => {
   return (
     <div className='eddituser'>
       <form className='for'>
-        <h3>Edit Doctors</h3>
+        <h3>Edit Patient</h3>
         <div className='input-con'>
           <p className='editTitle-l'>Name</p>
           <p className='editTitle-r'>Surname</p>
@@ -86,8 +86,8 @@ const EditPost = (props) => {
           <textarea className='edit-input' id='updSurname' placeholder='Edit Surname' onChange={surnameChange} />
         </div>
         <div className='input-con'>
-          <textarea className='edit-input' id='updSpecialization' placeholder='Edit Specialization' onChange={specializationChange} />
-          <textarea className='edit-input' id='updRoom' placeholder='Edit Room' onChange={roomChange} />
+          <textarea className='edit-input' id='updMedicalAidNumber' placeholder='Edit medicalAidNumber' onChange={medicalAidNumberChange} />
+          <textarea className='edit-input' id='updIddoc' placeholder='Edit iddoc' onChange={iddocChange} />
         </div>
         <div className='input-con'>
           <textarea className='edit-input-long' id='updEmail' placeholder='Edit Email' onChange={emailChange} />
@@ -102,4 +102,4 @@ const EditPost = (props) => {
   )
 }
 
-export default EditPost
+export default EditPatient
