@@ -36,7 +36,7 @@ const Login = () => {
 
           if(response.data === true){
             sessionStorage.setItem('activeUser', inputs.username);
-            navigate("/dashboard")
+            navigate("/Appointments")
           }else {
             console.log("not working");
           }
@@ -58,16 +58,7 @@ const Login = () => {
                 <a><p className="forgot-btn">Forgot password</p></a>
                 <button className="login-btn" type="submit"  onClick={handleSubmit} >Login</button>
             </div>
-
-        {/* <form>
-            <h1>Sign In to FakeBook</h1>
-            <p>You life belongs to us!</p>
-            <input name="username" type="username" placeholder='Your Username' onChange={usernameVal} />
-            <input name="password" type="password" placeholder='YourPassword' onChange={passwordeVal} />     
-            <button type="submit" onClick={handleSubmit}>I am ready to waste my life!</button>
-        </form> */}
-
-        </div>
+        </div> 
     );
 }
 
