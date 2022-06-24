@@ -131,7 +131,6 @@ const RegisterDoctor = (props) => {
         if(inputs.room !== ''){setRoomError();}
     }
 
-
     const specializationVal = (e) => {
         const value = e.target.value.trim();
         setInputs({...inputs, specialization:value});
@@ -250,7 +249,6 @@ const RegisterDoctor = (props) => {
                 <div id="profileimg" className='profile_img'></div> 
                 <p className='upload'>Upload a Doctor Image</p>
                 <input name="imageUrl" className='imgInput' type="file" onChange={imageVal} />
- 
             </div>            
             <div className='input-con'>
                 {nameError}

@@ -1,6 +1,15 @@
 .container{
-    background-color: blueviolet;
-    width: 90%;
-    height: 100vh;
-    float: right;
-  }
+  background-color: #2F3B4C;
+  width: 93%;
+  height: 100vh;
+  float: right;
+}
+
+.bookings{
+  width: 30%;
+  height: auto;
+  position: relative;
+  margin:3% auto;
+  background-color: #2F3B4C;
+  padding: 25px;
+}

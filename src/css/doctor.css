@@ -1,6 +1,6 @@
 .container{
   background-color: #2F3B4C;
-  width: 90%;
+  width: 93%;
   height: 100vh;
   float: right;
 }
@@ -68,11 +68,11 @@ th {
 }
 
 .tb-img{
-  width: 8%;
+  width: 5vw;
 }
 
 .tb-change{
-  width: 5%;
+  width: 2vw;
 }
 
 .table-img{

@@ -88,6 +88,18 @@ const EditPost = (props) => {
         <div className='input-con'>
           <textarea className='edit-input' id='updSpecialization' placeholder='Edit Specialization' onChange={specializationChange} />
           <textarea className='edit-input' id='updRoom' placeholder='Edit Room' onChange={roomChange} />
+          
+          {/* <select className='edit-input' id='updRoom' onChange={roomChange} >  
+            <option value = "BMW"> BMW
+            </option>  
+            <option value = "Mercedes"> Mercedes
+            </option>  
+            <option value = "Audi"> Audi
+            </option>  
+            <option value = "Skoda"> Skoda
+            </option>  
+          </select>   */}
+
         </div>
         <div className='input-con'>
           <textarea className='edit-input-long' id='updEmail' placeholder='Edit Email' onChange={emailChange} />

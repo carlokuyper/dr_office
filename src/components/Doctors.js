@@ -30,7 +30,7 @@ const Doctors = (props) => {
     }   
   },[]);
 
-  //This useEffect will ge the table items for all the user
+  //This useEffect will get the table items for all the user
   useEffect(() => {
     axios.post('http://localhost/drOffice/readDr.php')
       .then((response) => {
