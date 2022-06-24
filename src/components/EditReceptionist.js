@@ -7,8 +7,7 @@ const EditReceptionist = (props) => {
   const [updDr, setUpdDr] = useState({
     nameUpdate: props.updateName,
     surnameUpdate: props.updateSurname,
-    specializationUpdate: props.updateSpecialization,
-    roomUpdate: props.updateRoom,
+    departmentUpdate: props.updateDepartment,
     emailUpdate: props.updateEmail,
     contactUpdate: props.updateContact,
     id:props.id
@@ -21,8 +20,7 @@ const EditReceptionist = (props) => {
   useEffect(()=>{
     document.getElementById('updName').innerHTML = props.updateName;
     document.getElementById('updSurname').innerHTML = props.updateSurname;
-    document.getElementById('updSpecialization').innerHTML = props.updateSpecialization;
-    document.getElementById('updRoom').innerHTML = props.updateRoom;
+    document.getElementById('updDepartment').innerHTML = props.updateDepartment;
     document.getElementById('updEmail').innerHTML = props.updateEmail;
     document.getElementById('updContact').innerHTML = props.updateContact;
   },[]);
@@ -39,15 +37,9 @@ const EditReceptionist = (props) => {
     console.log(updDr);
   }
 
-  const specializationChange = (e) => {
+  const departmentChange = (e) => {
     let value = e.target.value;
-    setUpdDr({...updDr, specializationUpdate: value});
-    console.log(updDr);
-  }
-
-  const roomChange = (e) => {
-    let value = e.target.value;
-    setUpdDr({...updDr, roomUpdate: value});
+    setUpdDr({...updDr, departmentUpdate: value});
     console.log(updDr);
   }
 
@@ -66,7 +58,7 @@ const EditReceptionist = (props) => {
   const udpatePost = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:80/drOffice/updateDr.php', updDr)
+    axios.post('http://localhost:80/drOffice/updateRecep.php', updDr)
       .then((res)=>{
         let data = res.data;
         console.log(data); 
@@ -86,8 +78,7 @@ const EditReceptionist = (props) => {
           <textarea className='edit-input' id='updSurname' placeholder='Edit Surname' onChange={surnameChange} />
         </div>
         <div className='input-con'>
-          <textarea className='edit-input' id='updSpecialization' placeholder='Edit Specialization' onChange={specializationChange} />
-          <textarea className='edit-input' id='updRoom' placeholder='Edit Room' onChange={roomChange} />
+          <textarea className='edit-input' id='updDepartment' placeholder='Edit Department' onChange={departmentChange} />
         </div>
         <div className='input-con'>
           <textarea className='edit-input-long' id='updEmail' placeholder='Edit Email' onChange={emailChange} />

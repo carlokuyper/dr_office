@@ -13,11 +13,11 @@ const TableItems = (props) => {
   }
 
   const editPat = () => {
-    setModal(<EditPatient upRen={props.rerender} rerender={setModal} updateName={props.name} updateSurname={props.surname} updateSpecialization={props.specialization} updateRoom={props.room} updateEmail={props.email} updateContact={props.contact} id={props.uniqueId} />)
+    setModal(<EditPatient upRen={props.rerender} rerender={setModal} updateName={props.name} updateSurname={props.surname} updateIddoc={props.iddoc} updateMedicalAidNumber={props.medicalAidNumber} updateEmail={props.email} updateContact={props.contact} id={props.uniqueId} />)
   }
 
   const editRec = () => {
-    setModal(<EditReceptionist upRen={props.rerender} rerender={setModal} updateName={props.name} updateSurname={props.surname} updateSpecialization={props.specialization} updateRoom={props.room} updateEmail={props.email} updateContact={props.contact} id={props.uniqueId} />)
+    setModal(<EditReceptionist upRen={props.rerender} rerender={setModal} updateName={props.name} updateSurname={props.surname} updateSpecialization={props.specialization} updateDepartment={props.department} updateEmail={props.email} updateContact={props.contact} id={props.uniqueId} />)
   }
 
   const deletDr = () => {
