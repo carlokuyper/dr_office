@@ -5,6 +5,15 @@
   float: right;
 }
 
+.title{
+  width: 90%;
+  height: auto;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+}
+
 .bookings{
   width: 30%;
   height: auto;
@@ -12,4 +21,45 @@
   margin:3% auto;
   background-color: #2F3B4C;
   padding: 25px;
+}
+
+.booking{
+  width: 50%;
+  float: left;
+  border-collapse: collapse;
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-align: left;
+}
+
+.edit-input{
+  border-radius: 10px;
+  width: 40%;
+  height: 2%;
+  padding: 2% 2% 2% 3%;
+  margin: 5% 1% 5% 0%;
+  font-size: 15px;
+  cursor: pointer;
+  float: left;
+}
+
+.inputL{
+  float: left;
+  width: 30%;
+  background-color: aqua;
+  margin: 2%;
+}
+.inputR{
+  float: left;
+  width: 30%;
+  background-color: red;
+  margin: 2%;
+}
+
+.input-con{
+  width: 90%;
+  margin-left: 5%;
 }

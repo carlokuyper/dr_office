@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const Bookings = (props) => {
+const DrBookings = (props) => {
 
   const navigate = useNavigate();
 
@@ -19,8 +19,9 @@ const Bookings = (props) => {
   return (
     <>
       <option value = {props.name + " " + props.surname}> {props.name + " " + props.surname}</option>  
+      <p>{props.room}</p> 
     </>
   )
 }
 
-export default Bookings 
+export default DrBookings 
