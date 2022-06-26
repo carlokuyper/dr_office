@@ -86,24 +86,18 @@ const EditPost = (props) => {
           <textarea className='edit-input' id='updSurname' placeholder='Edit Surname' onChange={surnameChange} />
         </div>
         <div className='input-con'>
+          <p className='editTitle-l'>Edit Specialization</p>
+          <p className='editTitle-r'>Edit Room</p>
           <textarea className='edit-input' id='updSpecialization' placeholder='Edit Specialization' onChange={specializationChange} />
           <textarea className='edit-input' id='updRoom' placeholder='Edit Room' onChange={roomChange} />
-          
-          {/* <select className='edit-input' id='updRoom' onChange={roomChange} >  
-            <option value = "BMW"> BMW
-            </option>  
-            <option value = "Mercedes"> Mercedes
-            </option>  
-            <option value = "Audi"> Audi
-            </option>  
-            <option value = "Skoda"> Skoda
-            </option>  
-          </select>   */}
-
+          </div>
+          <div className='input-con'>
+          <p className='editTitle-l'>Edit Email</p>
+          <textarea className='edit-input-long' id='updEmail' placeholder='Edit Email' onChange={emailChange} />
         </div>
         <div className='input-con'>
-          <textarea className='edit-input-long' id='updEmail' placeholder='Edit Email' onChange={emailChange} />
-          <textarea className='edit-input' id='updContact' placeholder='Edit Number' onChange={contactChange} />
+          <p className='editTitle-l'>Edit Number</p>
+          <textarea className='edit-input-long' id='updContact' placeholder='Edit Number' onChange={contactChange} />
         </div>
         {/* <button type='submit' onClick={udpatePost}>Edit this post</button> */}
         <button className='reg-btn' type="submit" onClick={udpatePost}>Edit Doctor</button>

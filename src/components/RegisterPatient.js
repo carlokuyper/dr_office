@@ -231,7 +231,7 @@ const RegisterPatient = (props) => {
                 console.log(response);
 
                 if(response.status === 200){
-                    navigate("/");
+                    navigate("/Patient");
                 }
             });
         }
@@ -243,7 +243,7 @@ const RegisterPatient = (props) => {
 
   return (
     <div  className='adduser'>
-        <form className='for' id='ImgOne' encType="multipart/form-data">
+        <form className='for2' id='ImgOne' encType="multipart/form-data">
             <div className='uploadimg'>
                 <div id="profileimg" className='profile_img'></div> 
                 <p className='upload'>Upload a patient Image</p>
@@ -266,7 +266,11 @@ const RegisterPatient = (props) => {
                 {ageError}
                 <input className='reg-input' name="age" type="age" placeholder='Age' onChange={ageVal} />
                 {genderError}
-                <input className='reg-input' name="gender" type="gender" placeholder='Male/Female/Other' onChange={genderVal} />
+                <select name="gender" type="gender" placeholder='Male/Female/Other' onChange={genderVal} className='reg-inputD' >  
+                  <option value={'Male'}>Male</option>
+                  <option value={'Female'}>Female</option>
+                  <option value={'Other'}>Other</option>
+                </select>
                 {iddocError}
                 <input className='reg-input' name="iddoc" type="iddoc" placeholder='What is your id?' onChange={iddocVal} />
                 {medicalAidNumberError}
@@ -279,8 +283,10 @@ const RegisterPatient = (props) => {
                 {passwordConError}
                 <input className='reg-input'  name="conPass" type="password" placeholder='Confirm Password' onChange={passwordConVal} />
             </div>
-            <button className='reg-btn' type="submit" onClick={handleSubmit}>Add Patient</button>
-            <p className='close-btn' onClick={closeModal}>Close</p>
+            <div className='input-con'>
+                <button className='reg-btn' type="submit" onClick={handleSubmit}>Add Patient</button>
+                <p className='close-btn' onClick={closeModal}>Close</p>
+            </div>
         </form>
             
     </div>

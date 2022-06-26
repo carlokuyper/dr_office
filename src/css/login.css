@@ -7,22 +7,26 @@
 
 .logo-holder-long{
   width: 30%;
-  display: block;
-  margin-left: 35%;
-  margin-right: auto;
+  float: left;
 }
 
 .logo-img-long{
-  width: 90%;
-  display: block;
+  width: 55%;
+  height: 20%;
+  /* display: block; */
   float: left;
+  background-image: url(../../public/logo-long-white.png);
+  z-index: 99;
+  background-size: cover;
+  margin-left: 2%;
 }
 
 .login-con{
   display: block;
-  width: 30%;
-  margin-left: 35%;
+  width: 80%;
+  margin-left: 2%;
   margin-right: auto;
+  margin-top: 10%;
   float: left;
 }
 
@@ -65,4 +69,25 @@
   margin: 5% 0% 0% 0%;
   font-size: 15px;
   cursor: pointer;
+}
+
+.split{
+  width: 50vw;
+  height: 100%;
+  float: left;
+}
+
+.split-img{
+  width: 90%;
+  height: 100%;
+  /* object-fit: cover; */
+  background-image: url("https://imageio.forbes.com/specials-images/imageserve/5dbb4182d85e3000078fddae/The-9-Biggest-Technology-Trends-That-Will-Transform-Medicine-And-Healthcare-In-2020/960x0.jpg?format=jpg&width=960");
+  background-size: cover;
+  background-position: center;
+  float: left;
+}
+
+.small{
+  margin-top: 5%;
+  margin-bottom: 3%;
 }

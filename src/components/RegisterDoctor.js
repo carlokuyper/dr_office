@@ -232,7 +232,7 @@ const RegisterDoctor = (props) => {
                 console.log(response);
 
                 if(response.status === 200){
-                    navigate("/");
+                    navigate("/Doctors");
                 }
             });
         }
@@ -269,7 +269,11 @@ const RegisterDoctor = (props) => {
             <div className='input-con'>
 
                 {genderError}
-                <input className='reg-input' name="gender" type="gender" placeholder='Male/Female/Other' onChange={genderVal} />
+                <select name="gender" type="gender" placeholder='Male/Female/Other' onChange={genderVal} className='reg-inputD' >  
+                  <option value={'Male'}>Male</option>
+                  <option value={'Female'}>Female</option>
+                  <option value={'Other'}>Other</option>
+                </select>
                 {roomError}
                 <input className='reg-input' name="room" type="room" placeholder='Room nr' onChange={roomVal} />
                 {specializationError}

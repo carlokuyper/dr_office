@@ -46,20 +46,28 @@ const Login = () => {
   }
 
     return(
-        <div className="login-container">
-            <div className="logo-holder-long"><img className="logo-img-long" src="../logo-long-white.png"/></div>
+      <div className="login-container">
+        <div className='split'>
+          <div className='split-img'>
+            <div className='logo-img-long'></div>
+          </div>
+        </div>
+        <div className='split'>
+          
 
-            <div className="login-con">
-                <h2>Login</h2>
-                <form>
-                    <input className="login-input" name="email" type="email" placeholder="email" onChange={emailVal} />
-                    <input className="login-input" name="password" type="password" placeholder="password" onChange={passwordeVal} />
-                </form>
-                <a><p className="forgot-btn">Forgot password</p></a>
-                <button className="login-btn" type="submit"  onClick={handleSubmit} >Login</button>
-            </div>
-        </div> 
-    );
+          <div className="login-con">
+              <h2 className='small'>Welcome Back!</h2>
+              <h3 className='small'>Login to continue</h3>
+              <form>
+                  <input className="login-input" name="email" type="email" placeholder="email" onChange={emailVal} />
+                  <input className="login-input" name="password" type="password" placeholder="password" onChange={passwordeVal} />
+              </form>
+              <a><p className="forgot-btn">Forgot password</p></a>
+              <button className="login-btn" type="submit"  onClick={handleSubmit} >Login</button>
+          </div>
+        </div>
+    </div> 
+  );
 }
 
 export default Login;

@@ -78,11 +78,17 @@ const EditReceptionist = (props) => {
           <textarea className='edit-input' id='updSurname' placeholder='Edit Surname' onChange={surnameChange} />
         </div>
         <div className='input-con'>
-          <textarea className='edit-input' id='updDepartment' placeholder='Edit Department' onChange={departmentChange} />
+        <p className='editTitle-l'>Edit Department</p>
+          <textarea className='edit-input-long' id='updDepartment' placeholder='Edit Department' onChange={departmentChange} />
+          
         </div>
         <div className='input-con'>
+        <p className='editTitle-l'>Edit Email</p>
           <textarea className='edit-input-long' id='updEmail' placeholder='Edit Email' onChange={emailChange} />
-          <textarea className='edit-input' id='updContact' placeholder='Edit Number' onChange={contactChange} />
+        </div>
+        <div className='input-con'>
+          <p className='editTitle-l'>Edit Number</p>
+          <textarea className='edit-input-long' id='updContact' placeholder='Edit Number' onChange={contactChange} />
         </div>
         {/* <button type='submit' onClick={udpatePost}>Edit this post</button> */}
         <button className='reg-btn' type="submit" onClick={udpatePost}>Edit Doctor</button>

@@ -216,7 +216,7 @@ const RegisterReceptionist = (props) => {
                 console.log(response);
 
                 if(response.status === 200){
-                    navigate("/");
+                    navigate("/Receptionist");
                 }
             });
         }
@@ -251,12 +251,23 @@ const RegisterReceptionist = (props) => {
                 {ageError}
                 <input className='reg-input' name="age" type="age" placeholder='Age' onChange={ageVal} />
                 {genderError}
-                <input className='reg-input' name="gender" type="gender" placeholder='Male/Female/Other' onChange={genderVal} />
-            </div>
+                <select name="gender" type="gender" placeholder='Male/Female/Other' onChange={genderVal} className='reg-inputD' >  
+                  <option value={'Male'}>Male</option>
+                  <option value={'Female'}>Female</option>
+                  <option value={'Other'}>Other</option>
+                </select>
+                </div>
 
             <div className='input-con'>
                 {departmentError}
-                <input className='reg-input-long' name="department" type="department" placeholder='Department' onChange={departmentVal} />
+                {/* <input className='reg-input-long' name="department" type="department" placeholder='Department' onChange={departmentVal} /> */}
+                <select  className='reg-input-longD' name="department" type="department" placeholder='Department' onChange={departmentVal} >  
+                  <option value={'Dermatology'}>Dermatology</option>
+                  <option value={'Pediatrics'}>Pediatrics</option>
+                  <option value={'Neurology'}>Neurology</option>
+                  <option value={'Psychical'}>Psychical</option>
+                  <option value={'Cardiology'}>Cardiology</option>
+                </select>
                 {passwordError}
                 <input className='reg-input' name="password" type="password" placeholder='Choose A Password' onChange={passwordVal} />
                 {passwordConError}
